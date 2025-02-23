@@ -1,0 +1,33 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/messages_header">
+
+        <EditTextPreference
+            app:key="signature"
+            app:title="Account Privacy"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="Light Mode"
+            app:entries="@array/reply_entries"
+            app:entryValues="@array/reply_values"
+            app:key="reply"
+            app:title="Theme"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="">
+
+        <SwitchPreferenceCompat
+            app:key="sync"
+            app:title="Notifications" />
+
+        <SwitchPreferenceCompat
+            app:dependency="sync"
+            app:key="attachment"
+            app:summaryOff="Turn off notifications between 22.00 - 08.00"
+            app:title="Do Not Disturb" />
+
+    </PreferenceCategory>
+</PreferenceScreen>
